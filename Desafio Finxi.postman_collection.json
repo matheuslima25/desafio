@@ -1,0 +1,146 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Desafio Finxi",
+		"_postman_id": "4ef0b70b-0fbc-a3fd-f62f-f0db692f476c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista de Demandas",
+			"request": {
+				"url": "http://localhost:8000/demanda/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Demanda",
+			"request": {
+				"url": "http://localhost:8000/demanda/1/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dXN1YXJpbzptdWRhcjEyMw==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"anunciante\": 2,\n\t\"descricao\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \",\n\t\"celular\": \"(83)9.9999-9999\",\n\t\"endereco\": {\n\t\t\"cep\": \"50721775\",\n\t\t\"pais\": \"Brasil\",\n\t\t\"cidade\": \"Recife\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Demanda copy",
+			"request": {
+				"url": "http://localhost:8000/demanda/1/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dXN1YXJpbzptdWRhcjEyMw==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"anunciante\": 2,\n\t\"descricao\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \",\n\t\"celular\": \"(83)9.9999-9999\",\n\t\"endereco\": {\n\t\t\"cep\": \"50721775\",\n\t\t\"pais\": \"Brasil\",\n\t\t\"cidade\": \"Recife\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Demanda",
+			"request": {
+				"url": "http://localhost:8000/demanda/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dXN1YXJpbzptdWRhcjEyMw==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"anunciante\": 2,\n\t\"descricao\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \",\n\t\"celular\": \"(83)9.9999-9999\",\n\t\"endereco\": {\n\t\t\"cep\": \"50721775\",\n\t\t\"pais\": \"Brasil\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Finalizar Demanda",
+			"request": {
+				"url": "http://localhost:8000/demanda/1/finalizar_demanda/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dXN1YXJpbzptdWRhcjEyMw==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

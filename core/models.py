@@ -3,6 +3,8 @@ import uuid
 from django.contrib.auth.models import Group, AbstractUser
 from django.db import models
 from django.db.models import QuerySet, ProtectedError
+from django.db.models import signals
+from django.dispatch import receiver
 from django.template.defaultfilters import truncatechars
 from django.utils.translation import ugettext as _
 
@@ -117,6 +119,17 @@ class User(AbstractUser, BaseModel):
 
     def __str__(self):
         return u'%s' % self.username
+
+
+@receiver(signals.post_save, sender=User)
+def user_post_save_signals(sender, instance, created, raw, using, *args, **kwargs):
+    if created:
+        if instance.is_superuser:
+            group = Perfil.objects.get(name='Administrador')
+            instance.groups.add(group.pk)
+        else:
+            group = Perfil.objects.get(name='Anunciante')
+            instance.groups.add(group.pk)
 
 
 class Demanda(BaseModel):

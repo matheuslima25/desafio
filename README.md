@@ -5,6 +5,7 @@ Projeto para a seleção da Finxi.
 ### Uso
 ```shell
 Iniciar o container: sudo docker-compose up
-Criar super usuário: sudo docker-compose run web python manage.py createsuperuser
+Super usuário: user=admin, pass=admin
+Usuário anunciante: user=usuario, pass=mudar123
 Acesso: 0.0.0.0:8000/admin/
 ```
