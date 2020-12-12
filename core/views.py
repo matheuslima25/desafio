@@ -11,7 +11,10 @@ class DemandaModelViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated, ]
 
     def get_queryset(self):
-        queryset = models.Demanda.objects.all()
+        queryset = models.Demanda.objects.none()
+        # Se for Administrador pode ver tudo
+        if self.request.user.groups.filter(name__in=('Administrador',)).exists():
+            queryset = models.Demanda.objects.all()
         # Se for Anunciante só permite editar o seus registros
         if self.request.user.groups.filter(name__in=('Anunciante',)).exists():
             queryset = queryset.filter(anunciante_id=self.request.user.pk)
